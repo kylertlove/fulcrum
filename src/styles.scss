@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@include mat-core();
+$light-app-primary: mat-palette($mat-indigo);
+$light-app-accent: mat-palette($mat-pink,
+A200,
+A100,
+A400);
+$light-app-theme: mat-light-theme($light-app-primary,
+$light-app-accent);
+@include angular-material-theme($light-app-theme);
+//dark theme
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent: mat-palette($mat-amber,
+A200,
+A100,
+A400);
+$dark-warn: mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme($dark-primary,
+$dark-accent,
+$dark-warn);
+.dark-theme {
+    @include angular-material-theme($dark-theme);
+}
