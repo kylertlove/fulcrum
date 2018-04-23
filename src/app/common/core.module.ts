@@ -6,16 +6,11 @@ import { NgxElectronModule } from 'ngx-electron';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
-
-const routes:Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component:HomeComponent},
-  {path: '**', redirectTo: '/home', pathMatch: 'full'}
-]
+import { CoreRouterModule } from './core-router.module';
 
 @NgModule({
   imports: [
-    CommonModule, RouterModule.forRoot(routes), NgxElectronModule, 
+    CommonModule, NgxElectronModule, CoreRouterModule,
     BrowserAnimationsModule, FlexLayoutModule, MaterialModule
   ],
   exports:[RouterModule],
