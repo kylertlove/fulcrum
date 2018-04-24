@@ -2,10 +2,7 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @include mat-core();
 $light-app-primary: mat-palette($mat-indigo);
-$light-app-accent: mat-palette($mat-pink,
-A200,
-A100,
-A400);
+$light-app-accent: mat-palette($mat-teal);
 $light-app-theme: mat-light-theme($light-app-primary,
 $light-app-accent);
 @include angular-material-theme($light-app-theme);

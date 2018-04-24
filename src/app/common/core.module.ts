@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import { CoreRouterModule } from './core-router.module';
+import { DirectoryViewerComponent } from '../components/directory-viewer/directory-viewer.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { CoreRouterModule } from './core-router.module';
     BrowserAnimationsModule, FlexLayoutModule, MaterialModule
   ],
   exports:[RouterModule],
-  declarations: [HomeComponent]
+  declarations: [HomeComponent, DirectoryViewerComponent]
 })
 export class CoreModule { }

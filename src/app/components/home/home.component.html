@@ -1,27 +1,10 @@
 <mat-drawer-container autosize fxLayout="row" style="width: 100%; height: 100vh;">
     <mat-drawer #drawer mode="side" opened="true">
-        <p>Auto-resizing sidenav</p>
-        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-        <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
+        <app-directory-viewer></app-directory-viewer>
     </mat-drawer>
-
-    <!-- <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button> -->
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <mat-card>
-            <h1>{{appName}}
-            </h1>
-            <br>
-            <button (click)="testElectronCall()" mat-raised-button color="primary">
-                    Call Node Services
-                <mat-icon>home</mat-icon>
-                </button>
-            <h4>{{syncCall}}</h4>
-            <h4>{{asyncCall}}</h4>
+    <mat-drawer-content fxLayout="row" fxLayoutAlign="center center" style="width:100%;">
+        <mat-card style="width:75%;">
+            <h1>{{appName}}</h1>
         </mat-card>
-    </div>
-
+    </mat-drawer-content>
 </mat-drawer-container>
