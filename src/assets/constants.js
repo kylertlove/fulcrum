@@ -4,5 +4,7 @@
 
 module.exports.IPC_CONSTANTS = {
     GET_DIRECTORY: "getdirectory",
-    RETURN_DIRECTORY: "senddirectory"
+    RETURN_DIRECTORY: "senddirectory",
+    GET_OS_INFO: 'os_info',
+    RETURN_OS_INFO: 'return_os_info'
 }

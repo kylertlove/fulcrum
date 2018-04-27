@@ -3,8 +3,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const fs = require('fs');
 const { buildIpc } = require('./controller');
-//const { testElectronService } = require('./controller');
-// const studentsFile = `${__dirname}/assets/students.json`;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -27,6 +25,7 @@ function createWindow() {
         win = null;
     });
 
+    // Build IPC Communication Listeners
     buildIpc(ipcMain);
 }
 

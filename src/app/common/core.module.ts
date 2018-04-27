@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import { CoreRouterModule } from './core-router.module';
 import { DirectoryViewerComponent } from '../components/directory-viewer/directory-viewer.component';
+import { OsInfoComponent } from '../components/os-info/os-info.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { DirectoryViewerComponent } from '../components/directory-viewer/directo
     BrowserAnimationsModule, FlexLayoutModule, MaterialModule
   ],
   exports:[RouterModule],
-  declarations: [HomeComponent, DirectoryViewerComponent]
+  declarations: [HomeComponent, DirectoryViewerComponent, OsInfoComponent]
 })
 export class CoreModule { }

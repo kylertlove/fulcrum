@@ -1,10 +1,8 @@
 <mat-drawer-container autosize fxLayout="row" style="width: 100%; height: 100vh;">
     <mat-drawer #drawer mode="side" opened="true">
-        <app-directory-viewer></app-directory-viewer>
+        <app-directory-viewer [dir]="directory"></app-directory-viewer>
     </mat-drawer>
-    <mat-drawer-content fxLayout="row" fxLayoutAlign="center center" style="width:100%;">
-        <mat-card style="width:75%;">
-            <h1>{{appName}}</h1>
-        </mat-card>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
     </mat-drawer-content>
 </mat-drawer-container>

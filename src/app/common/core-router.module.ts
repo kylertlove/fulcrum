@@ -1,11 +1,13 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "../components/home/home.component";
+import { OsInfoComponent } from "../components/os-info/os-info.component";
 
 const routes:Routes = [
-    {path: '', redirectTo: '/home', pathMatch: 'full'},
-    {path: 'home', component:HomeComponent},
-    {path: '**', redirectTo: '/home', pathMatch: 'full'}
+    {path: '', component:HomeComponent, children: [
+        {path: '', redirectTo: 'osInfo', pathMatch: 'full'},
+        {path: 'osInfo', component:OsInfoComponent}
+    ]}
   ]
 
 @NgModule({

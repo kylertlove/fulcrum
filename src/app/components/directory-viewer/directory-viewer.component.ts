@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
 import { IPC_CONSTANTS } from '../../../assets/constants';
 
@@ -13,6 +13,7 @@ import { IPC_CONSTANTS } from '../../../assets/constants';
 export class DirectoryViewerComponent implements OnInit {
 
   currentDirectory: string[];
+  @Input() dir;
   constructor(private electronService: ElectronService, private ref: ChangeDetectorRef) {
     this.currentDirectory = [];
    }
@@ -25,7 +26,7 @@ export class DirectoryViewerComponent implements OnInit {
             //zone.js doesnt detect changes on ipc.  manually detect
             this.ref.detectChanges();
           });
-          let location = '/'; //temp
+          let location = this.dir ? this.dir : '/';
           this.electronService.ipcRenderer.send(IPC_CONSTANTS.GET_DIRECTORY, location);
         } else {
           console.log("This is running in a browser and not in electron");

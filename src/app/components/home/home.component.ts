@@ -8,7 +8,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class HomeComponent implements OnInit, OnDestroy {
 
   appName: string = "Fulcrum";
-
+  directory: string = "C:\\Users\\q1422955"; //TODO: change to factory Behavior subject
   constructor() {
   }
 
