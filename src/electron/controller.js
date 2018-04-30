@@ -19,7 +19,7 @@ module.exports.buildIpc = (ipcMain) => {
         getOsInfo()
             .then(
                 (res) => {
-                    event.sender.send(IPC_CONSTANTS.RETURN_OS_INFO, { "OS Info": res });
+                    event.sender.send(IPC_CONSTANTS.RETURN_OS_INFO, { "hostInfo": res });
                 },
                 (err) => {
                     event.sender.send(IPC_CONSTANTS.RETURN_OS_INFO, { "err": err });

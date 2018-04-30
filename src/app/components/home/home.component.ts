@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FactoryService } from '../../common/services/factory.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,17 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class HomeComponent implements OnInit, OnDestroy {
 
   appName: string = "Fulcrum";
-  directory: string = "C:\\Users\\q1422955"; //TODO: change to factory Behavior subject
-  constructor() {
+  username: string;
+  directory: string = null; //TODO: change to factory Behavior subject
+  constructor(private factory: FactoryService) {
+
+      factory.HostInfo.subscribe( observ => {
+        if(observ){
+          this.directory = observ.hostInfo.userInfo.homedir;
+          this.username = observ.hostInfo.userInfo.username;
+        }
+        // this.directory = observ.userInfo.username;
+      })
   }
 
   ngOnInit() {

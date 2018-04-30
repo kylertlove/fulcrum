@@ -1,8 +1,8 @@
 <mat-drawer-container autosize fxLayout="row" style="width: 100%; height: 100vh;">
-    <mat-drawer #drawer mode="side" opened="true">
-        <app-directory-viewer [dir]="directory"></app-directory-viewer>
+    <mat-drawer #drawer mode="side" opened="true" class="mat-drawer-view" fxFlex="25">
+        <app-directory-viewer *ngIf="directory" [dir]="directory"></app-directory-viewer>
     </mat-drawer>
-    <mat-drawer-content>
+    <mat-drawer-content style="width: 100%;">
         <router-outlet></router-outlet>
     </mat-drawer-content>
 </mat-drawer-container>

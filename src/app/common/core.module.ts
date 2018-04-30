@@ -9,6 +9,7 @@ import { MaterialModule } from './material.module';
 import { CoreRouterModule } from './core-router.module';
 import { DirectoryViewerComponent } from '../components/directory-viewer/directory-viewer.component';
 import { OsInfoComponent } from '../components/os-info/os-info.component';
+import { FactoryService } from './services/factory.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { OsInfoComponent } from '../components/os-info/os-info.component';
     BrowserAnimationsModule, FlexLayoutModule, MaterialModule
   ],
   exports:[RouterModule],
-  declarations: [HomeComponent, DirectoryViewerComponent, OsInfoComponent]
+  declarations: [HomeComponent, DirectoryViewerComponent, OsInfoComponent],
+  providers: [FactoryService]
 })
 export class CoreModule { }

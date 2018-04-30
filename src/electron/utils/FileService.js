@@ -8,20 +8,24 @@ const { SystemObject } = require('../models/ModelObjects');
 getDirectory = (path) => {
     return new Promise((resolve, reject) => {
         fs.readdir(path, (err, files) => {
-            if (err) reject(err);
+            if (err) {
+                console.error('getDirectory | ', err)
+                reject(err);
+            }
             resolve(files);
         });
     });
 }
 
+/**
+ * Return a SystemObject with system information from host machine
+ */
 getOsInfo = () => {
     return new Promise((resolve, reject) => {
-        console.log("working")
         try {
             var osObj = new SystemObject(os.platform(), os.userInfo(), os.totalmem());
-            console.log(osObj)
         } catch (e) {
-            console.log(e)
+            console.error("getOsInfo | ", e)
             reject(e);
         }
         resolve(osObj);
