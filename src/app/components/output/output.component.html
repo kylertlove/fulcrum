@@ -1,0 +1,8 @@
+<div class="board">
+    <div style="float: right;">
+        <button mat-mini-fab style="width:20px; height: 20px;" (click)="clearConsole();" matTooltip="Clear Console"><span class="xBtn">x</span></button>
+    </div>
+    <div *ngFor="let output of consoleOutput" class="outputObj">
+        <p title="{{output.time}}" class="outputP">{{output.output}}</p>
+    </div>
+</div>

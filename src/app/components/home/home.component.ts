@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FactoryService } from '../../common/services/factory.service';
+import { NetworkService } from '../../common/services/network.service';
 
 @Component({
   selector: 'app-home',
@@ -9,21 +10,11 @@ import { FactoryService } from '../../common/services/factory.service';
 export class HomeComponent implements OnInit, OnDestroy {
 
   appName: string = "Fulcrum";
-  username: string;
-  directory: string = null; //TODO: change to factory Behavior subject
-  constructor(private factory: FactoryService) {
-
-      factory.HostInfo.subscribe( observ => {
-        if(observ){
-          this.directory = observ.hostInfo.userInfo.homedir;
-          this.username = observ.hostInfo.userInfo.username;
-        }
-        // this.directory = observ.userInfo.username;
-      })
+  constructor(private factory: FactoryService, private netService: NetworkService) {
   }
 
   ngOnInit() {
-
+    this.netService.getHostInformation();
   }
   ngOnDestroy(): void { }
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OsInfoComponent } from './os-info.component';
+import { PingComponent } from './ping.component';
 
-describe('OsInfoComponent', () => {
-  let component: OsInfoComponent;
-  let fixture: ComponentFixture<OsInfoComponent>;
+describe('PingComponent', () => {
+  let component: PingComponent;
+  let fixture: ComponentFixture<PingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OsInfoComponent ]
+      declarations: [ PingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OsInfoComponent);
+    fixture = TestBed.createComponent(PingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

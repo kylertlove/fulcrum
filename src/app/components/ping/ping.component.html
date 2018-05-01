@@ -1,0 +1,11 @@
+<div fxLayout="column" style="height: 100%;">
+    <div fxFlex="20" class="padding">
+        <mat-form-field>
+            <input matInput placeholder="IP Address" [(ngModel)]="ipAddress">
+        </mat-form-field>
+        <button mat-raised-button (click)="ping();">Ping</button>
+    </div>
+    <div fxFlex="80" class="padding">
+        <app-output></app-output>
+    </div>
+</div>

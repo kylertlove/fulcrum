@@ -1,3 +1,7 @@
 .mat-drawer-view {
     overflow-x: auto;
 }
+
+.actionButtons {
+    width: 100%;
+}

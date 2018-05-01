@@ -8,16 +8,20 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import { CoreRouterModule } from './core-router.module';
 import { DirectoryViewerComponent } from '../components/directory-viewer/directory-viewer.component';
-import { OsInfoComponent } from '../components/os-info/os-info.component';
 import { FactoryService } from './services/factory.service';
+import { NetworkService } from './services/network.service';
+import { IntroComponent } from '../components/intro/intro.component';
+import { PingComponent } from '../components/ping/ping.component';
+import { OutputComponent } from '../components/output/output.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule, NgxElectronModule, CoreRouterModule,
-    BrowserAnimationsModule, FlexLayoutModule, MaterialModule
+    BrowserAnimationsModule, FlexLayoutModule, MaterialModule, FormsModule
   ],
   exports:[RouterModule],
-  declarations: [HomeComponent, DirectoryViewerComponent, OsInfoComponent],
-  providers: [FactoryService]
+  declarations: [HomeComponent, DirectoryViewerComponent, IntroComponent, PingComponent, OutputComponent],
+  providers: [FactoryService, NetworkService]
 })
 export class CoreModule { }

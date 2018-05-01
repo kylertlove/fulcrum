@@ -22,8 +22,9 @@ getDirectory = (path) => {
  */
 getOsInfo = () => {
     return new Promise((resolve, reject) => {
+        let osObj;
         try {
-            var osObj = new SystemObject(os.platform(), os.userInfo(), os.totalmem());
+            osObj = new SystemObject(os.platform(), os.userInfo(), os.totalmem(), os.networkInterfaces());
         } catch (e) {
             console.error("getOsInfo | ", e)
             reject(e);

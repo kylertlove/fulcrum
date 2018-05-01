@@ -2,7 +2,7 @@
 
 const { app, BrowserWindow, ipcMain } = require('electron');
 const fs = require('fs');
-const { buildIpc } = require('./controller');
+const { buildIpc } = require('./ipc_builder');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -10,12 +10,15 @@ let win;
 
 function createWindow() {
     // Create the browser window.
-    win = new BrowserWindow({ width: 1100, height: 600 });
+    win = new BrowserWindow({ width: 1100, height: 600, fullscreenable: false, icon: __dirname + '/assets/images/256x256.png' });
 
-    //win.setMenuBarVisibility(false);
+    win.setMenuBarVisibility(false);
 
     // and load the index.html of the app.
     win.loadURL(`file://${__dirname}/index.html`);
+
+    //open dev tools on startup
+    win.webContents.openDevTools();
 
     // Emitted when the window is closed.
     win.on('closed', () => {

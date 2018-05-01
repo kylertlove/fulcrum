@@ -12,6 +12,7 @@ import { IPC_CONSTANTS } from '../../../assets/constants';
 })
 export class DirectoryViewerComponent implements OnInit {
 
+  //<app-directory-viewer *ngIf="directory" [dir]="directory"></app-directory-viewer>
   currentDirectory: string[];
   @Input() dir;
   constructor(private electronService: ElectronService, private ref: ChangeDetectorRef) {
