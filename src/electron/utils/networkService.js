@@ -10,15 +10,15 @@ ping = (address, event) => {
     const pings = spawn('ping', [address]);
     pings.stdout.on('data', (data) => {
         event.sender.send(IPC_CONSTANTS.RETURN_PING, data.toString());
-        output += data;
+        output += data.toString();
     });
     pings.stderr.on('data', (err) => {
         event.sender.send(IPC_CONSTANTS.RETURN_PING, err.toString());
         console.log('err', err);
     });
     pings.on('close', (code) => {
-        //do something when exit code is thrown
-        //console.log('close', code);
+        //Exit Code
+        //event.sender.send(IPC_CONSTANTS.RETURN_PING, output);
     });
 }
 

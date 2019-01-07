@@ -1,9 +1,9 @@
 /**
  * hostInfo {
  *      OS: string;
+ *      userinfo: obj
  *      mem: number;
- *      userInfo: https://nodejs.org/api/os.html#os_os_userinfo_options
- *      interfaces: https://nodejs.org/api/os.html#os_os_networkinterfaces 
+ *      interfaces: obj
  * }
  * @param {string} os 
  * @param {obj} userinfo 
